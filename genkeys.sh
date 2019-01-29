@@ -2,6 +2,8 @@
 # If you receive a "Permission denied error, try running the following command:"
 #       chmod 500 ./genkeys
 
+#!/bin/bash
+
 echo "#########################################################################"
 echo "################################# GENKEYS ################################"
 echo "#########################################################################"
@@ -21,8 +23,8 @@ ssh-add ~/.ssh/id_rsa
 
 printf "\n\nInstalling the xclip tool to assist in retrieving your new key."
 printf "\nPlease enter your user credentials when prompted.\n\n"
-$(sudo apt-get install xclip) &> /dev/null/
-$(xclip -sel clip < ~/.ssh/id_rsa.pub) &> /dev/null/
+$(sudo apt-get install xclip) #&> /dev/null/
+$(xclip -sel clip < ~/.ssh/id_rsa.pub) #&> /dev/null/
 
 printf "\n\nYour new ssh key has been added to your clipboard."
 printf "\nLogin to your Github account and visit https://github.com/settings/ssh/new"
